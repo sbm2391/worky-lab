@@ -8,22 +8,21 @@
             <v-toolbar-title class="white--text">Create new item</v-toolbar-title>
           </v-toolbar>
           <v-container fluid grid-list-md>
-            <v-form v-model="valid">
+            <v-form>
               <v-text-field
                 label="Title"
-                v-model="title"
+                v-model="item.title"
                 :counter="50"
                 required
               ></v-text-field>
               <v-text-field
                 label="Description"
-                v-model="body"
+                v-model="item.body"
                 :counter="150"
                 required
               ></v-text-field>
               <v-btn
                 @click="submit"
-                :disabled="!valid"
               >
                 submit
               </v-btn>
@@ -38,30 +37,37 @@
 </template>
 
 <script>
+import itemService from '@/services/Item'
 export default {
   data () {
     return {
       name: 'newItem',
-      title: '',
-      body: ''
+      item: {
+        title: ' ',
+        body: ' '
+      }
+    }
+  },
+  methods: {
+    async submit () {
+      // Native form submission is not yet supported
+      try {
+        await itemService.postItems(this.item)
+        this.item = {
+          title: ' ',
+          body: ' '
+        }
+      } catch (err) {
+        console.log(err)
+      }
+    },
+    clear () {
+      this.item = {
+        title: ' ',
+        body: ' '
+      }
     }
   }
-  // methods: {
-    // submit () {
-    //   if (this.$refs.form.validate()) {
-    //     // Native form submission is not yet supported
-    //     axios.post('/api/submit', {
-    //       name: this.name,
-    //       email: this.email,
-    //       select: this.select,
-    //       checkbox: this.checkbox
-    //     })
-    //   }
-    // },
-  //   clear () {
-  //     this.$refs.form.reset()
-  //   }
-  // }
 }
 </script>
 
