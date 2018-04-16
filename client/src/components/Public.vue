@@ -1,8 +1,10 @@
 <template>
   <div id="app">
       <v-app id="inspire">
-            <navbar></navbar>
+       <navbar></navbar>
+          <v-layout>
             <list-items></list-items>
+        </v-layout>
       </v-app>
   </div>
 </template>

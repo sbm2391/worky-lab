@@ -1,14 +1,18 @@
 <template>
   <div id="app">
       <v-app id="inspire">
-        <navbar></navbar>
-        <new-item></new-item>
+       <navbar></navbar>
+          <v-layout row>
+            <new-item></new-item>
+            <modify-items></modify-items>
+        </v-layout>
       </v-app>
   </div>
 </template>
 
 <script>
 import NewItem from '@/components/NewItem.vue'
+import ModifyItems from '@/components/ModifyItems.vue'
 export default {
   data () {
     return {
@@ -16,7 +20,8 @@ export default {
     }
   },
   components: {
-    'new-item': NewItem
+    'new-item': NewItem,
+    'modify-items': ModifyItems
   }
 }
 </script>

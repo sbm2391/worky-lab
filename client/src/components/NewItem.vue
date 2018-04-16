@@ -1,42 +1,36 @@
 <template>
- <div id="items">
-  <v-app id="inspire">
-    <v-layout>
-      <v-flex xs12 sm4>
-        <v-card>
-          <v-toolbar flat dense class="grey">
-            <v-toolbar-title class="white--text">Create new item</v-toolbar-title>
-          </v-toolbar>
-          <v-container fluid grid-list-md>
-            <v-form v-model="valid" ref="form" lazy-validation>
-              <v-text-field
-                label="Title"
-                v-model="item.title"
-                :counter="50"
-                :rules="titleRules"
-                required
-              ></v-text-field>
-              <v-text-field
-                label="Description"
-                v-model="item.body"
-                :counter="150"
-                :rules="bodyRules"
-                required
-              ></v-text-field>
-              <v-btn
-                @click="submit"
-                :disabled="!valid"
-              >
-                submit
-              </v-btn>
-              <v-btn @click="clear">clear</v-btn>
-          </v-form>
-          </v-container>
-        </v-card>
-      </v-flex>
-    </v-layout>
-  </v-app>
-</div>
+    <v-flex xs12 sm4 id="margin">
+      <v-card>
+        <v-toolbar flat dense class="grey">
+          <v-toolbar-title class="white--text">Create new item</v-toolbar-title>
+        </v-toolbar>
+        <v-container fluid grid-list-md>
+          <v-form v-model="valid" ref="form" lazy-validation>
+            <v-text-field
+              label="Title"
+              v-model="item.title"
+              :counter="50"
+              :rules="titleRules"
+              required
+            ></v-text-field>
+            <v-text-field
+              label="Description"
+              v-model="item.body"
+              :counter="150"
+              :rules="bodyRules"
+              required
+            ></v-text-field>
+            <v-btn
+              @click="submit"
+              :disabled="!valid"
+            >
+              submit
+            </v-btn>
+            <v-btn @click="clear">clear</v-btn>
+        </v-form>
+        </v-container>
+      </v-card>
+    </v-flex>
 </template>
 
 <script>
@@ -87,7 +81,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#items{
-  margin: 20px;
+#margin {
+  margin: 20px
 }
 </style>

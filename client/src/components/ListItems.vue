@@ -2,12 +2,15 @@
 <div id="items">
   <v-app id="inspire">
     <v-layout>
-      <v-flex xs12 sm6 offset-sm3>
+      <v-flex xs12 sm10 offset-sm1>
         <v-card>
+          <v-toolbar flat dense class="grey">
+            <v-toolbar-title class="white--text">Items</v-toolbar-title>
+          </v-toolbar>
           <v-container fluid grid-list-md>
             <v-layout row wrap>
               <v-flex
-                xs12 sm6
+                xs12 sm3
                 v-for="item in items"
                 :key="item._id"
               >
