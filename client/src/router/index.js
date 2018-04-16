@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import ListItems from '@/components/ListItems'
+import Public from '@/components/Public'
+import Private from '@/components/Private'
 
 Vue.use(Router)
 
@@ -8,8 +9,17 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'ListItems',
-      component: ListItems
+      redirect: '/public'
+    },
+    {
+      path: '/public',
+      name: 'Public',
+      component: Public
+    },
+    {
+      path: '/private',
+      name: 'Private',
+      component: Private
     }
   ]
 })
