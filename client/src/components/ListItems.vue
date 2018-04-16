@@ -46,7 +46,7 @@ export default {
 
   data () {
     return {
-      name: 'ListItems',
+      name: 'listItems',
       items: null
     }
   },

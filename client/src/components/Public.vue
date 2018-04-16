@@ -2,7 +2,7 @@
   <div id="app">
       <v-app id="inspire">
             <navbar></navbar>
-           <list-items></list-items>
+            <list-items></list-items>
       </v-app>
   </div>
 </template>
