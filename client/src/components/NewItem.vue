@@ -8,21 +8,24 @@
             <v-toolbar-title class="white--text">Create new item</v-toolbar-title>
           </v-toolbar>
           <v-container fluid grid-list-md>
-            <v-form>
+            <v-form v-model="valid" ref="form" lazy-validation>
               <v-text-field
                 label="Title"
                 v-model="item.title"
                 :counter="50"
+                :rules="titleRules"
                 required
               ></v-text-field>
               <v-text-field
                 label="Description"
                 v-model="item.body"
                 :counter="150"
+                :rules="bodyRules"
                 required
               ></v-text-field>
               <v-btn
                 @click="submit"
+                :disabled="!valid"
               >
                 submit
               </v-btn>
@@ -41,6 +44,15 @@ import itemService from '@/services/Item'
 export default {
   data () {
     return {
+      valid: false,
+      titleRules: [
+        v => !!v || 'title is required',
+        v => (v && v.length <= 50) || 'title must be less than 10 characters'
+      ],
+      bodyRules: [
+        v => !!v || 'title is required',
+        v => (v && v.length <= 150) || 'Description must be less than 10 characters'
+      ],
       name: 'newItem',
       item: {
         title: ' ',
@@ -49,23 +61,25 @@ export default {
     }
   },
   methods: {
-    async submit () {
-      // Native form submission is not yet supported
-      try {
-        await itemService.postItems(this.item)
-        this.item = {
-          title: ' ',
-          body: ' '
-        }
-      } catch (err) {
-        console.log(err)
-      }
-    },
-    clear () {
+    clearInputs () {
       this.item = {
         title: ' ',
         body: ' '
       }
+    },
+    async submit () {
+      // Native form submission is not yet supported
+      if (this.$refs.form.validate()) {
+        try {
+          await itemService.postItems(this.item)
+          this.clearInputs()
+        } catch (err) {
+          console.log(err)
+        }
+      }
+    },
+    clear () {
+      this.clearInputs()
     }
   }
 }
