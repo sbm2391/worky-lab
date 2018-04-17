@@ -13,6 +13,7 @@
                 xs12 sm3
                 v-for="item in items"
                 :key="item._id"
+                v-if="item.state === 'public'"
               >
                 <v-card>
                   <v-card-media
