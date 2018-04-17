@@ -2,11 +2,12 @@
   <div id="app">
       <v-app id="inspire">
        <navbar></navbar>
-          <v-layout>
+          <v-layout row>
             <list-items></list-items>
         </v-layout>
       </v-app>
   </div>
+
 </template>
 
 <script>

@@ -57,7 +57,7 @@ export default {
   data () {
     return {
       name: 'listItems',
-      items: null
+      items: []
     }
   },
   async mounted () {
@@ -73,7 +73,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 #items {
-  margin: 20px;
+  margin: 20px auto;
   width: 100vw;
 }
 .message {

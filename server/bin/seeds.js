@@ -5,26 +5,27 @@ const Item = require("../models/Item");
 
 const items = [
     {
-        title: "iMac Apple de 21.5",
-        body: "¡Una experiencia cada vez más brillante! La nueva iMac viene con nuevos procesadores, lo último en tecnología gráfica, almacenamiento innovador y conectividad con mayor ancho de banda" 
+        title: "iMac Apple",
+        body: "¡Una experiencia cada vez mejor! La nueva iMac viene con nuevos procesadores" 
     },
     {
         title: "Dell XPS 13",
-        body: "El Dell XPS 13 predomina como el mejor portátil que puedes comprar hoy en día." 
+        body: "Predomina como el mejor portátil que puedes comprar hoy en día." 
     },
     {
-        title: "Razer Blade Stealth",
-        body: "El Razer Blade Stealth es un Ultrabook excepcional, limitado sólo en tratar de ser un portátil de juego competente. " 
+        title: "Razer Blade",
+        body: "Limitado sólo en tratar de ser un portátil de juego competente." 
     },
     {
-        title: "Asus Chromebook Flip",
-        body: "Originalmente comercializado como un Chromebook para competir con los gustos del Chromebook Pixel, no es difícil ver por qué estábamos escépticos respecto al primer Asus Chromebook Flip que revisamos." 
+        title: "Asus Chrome",
+        body: "Comercializado como un Chromebook para competir con Chromebook Pixel." 
     },
     {
         title: "HP Specter x360",
-        body: "La versión de 13,3 pulgadas de la HP Specter x360 puede no tener la ranura para tarjetas SD de su hermana de 15,6 pulgadas." 
+        body: "La versión de 13,3 pulgadas no tiene la ranura para tarjetas SD." 
     }
     ];
+
 Item.collection.drop();
 Item.create(items)
 .then(()=> {
