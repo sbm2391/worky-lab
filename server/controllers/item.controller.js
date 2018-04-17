@@ -5,7 +5,13 @@ exports.getItems = function(req, res, next) {
     .then(items=>res.status(200).json(items))
     .catch(e=>res.status(500).send(e));
   }
-  
+
+exports.getItemsByState = function(req, res, next) {
+    Item.find({'state': 'public'})
+    .then(items=>res.status(200).json(items))
+    .catch(e=>res.status(500).send(e));
+}
+
 exports.postItem = (req, res, next)=>{
     Item.find()
         .then(ItemList => {

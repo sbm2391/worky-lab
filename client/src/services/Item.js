@@ -4,7 +4,9 @@ export default {
   getItems () {
     return Api().get('item')
   },
-
+  getItemsByState () {
+    return Api().get('item/public')
+  },
   postItems (item) {
     return Api().post('item', item)
   },
