@@ -89,6 +89,7 @@ export default {
     async deleteItem (item) {
       // Native form submission is not yet supported
       try {
+        this.$emit('remove')
         await itemService.deleteItem(item)
         console.log('deleted item')
       } catch (err) {

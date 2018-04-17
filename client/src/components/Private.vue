@@ -16,6 +16,7 @@
                     :item="item"
                     :index="index"
                     :key="item.id"
+                    v-on:remove="items.splice(index, 1)"
                     ></modify-item>
                     </v-layout>
                   </v-container>
