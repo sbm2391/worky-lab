@@ -3,10 +3,10 @@
         <v-toolbar-title class="white--text">Worky</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items>
-            <v-btn flat @click="navigateTo({name: 'Public'})">Public</v-btn>
+          <v-btn flat @click="navigateTo({name: 'Public'})">Public</v-btn>
       </v-toolbar-items>
       <v-toolbar-items>
-            <v-btn flat @click="navigateTo({name: 'Private'})">Private</v-btn>
+          <v-btn flat @click="navigateTo({name: 'Private'})">Private</v-btn>
       </v-toolbar-items>
     </v-toolbar>
 </template>
