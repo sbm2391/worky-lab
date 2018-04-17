@@ -63,5 +63,6 @@ export default {
 <style scoped>
 #items {
   margin: 20px;
+  width: 100vw;
 }
 </style>

@@ -38,15 +38,15 @@ import itemService from '@/services/Item'
 export default {
   data () {
     return {
-      items:null,
+      items: null,
       valid: false,
       titleRules: [
         v => !!v || 'title is required',
-        v => (v && v.length <= 50) || 'title must be less than 10 characters'
+        v => (v && v.length <= 50) || 'title must be less than 50 characters'
       ],
       bodyRules: [
         v => !!v || 'title is required',
-        v => (v && v.length <= 150) || 'Description must be less than 10 characters'
+        v => (v && v.length <= 150) || 'Description must be less than 150 characters'
       ],
       name: 'newItem',
       item: {

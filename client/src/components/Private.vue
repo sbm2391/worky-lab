@@ -7,7 +7,7 @@
             <v-flex xs12 sm12 id="margin">
               <v-card>
                   <v-toolbar flat dense class="grey">
-                  <v-toolbar-title class="white--text">Items</v-toolbar-title>
+                  <v-toolbar-title class="white--text">My items</v-toolbar-title>
                   </v-toolbar>
                   <v-container fluid grid-list-md>
                     <v-layout row wrap>
@@ -45,11 +45,11 @@ export default {
     'new-item': NewItem,
     'modify-item': ModifyItem
   },
-   methods: {
-     updateItems(newItems){
-       this.items = newItems
-     }
-   }
+  methods: {
+    updateItems (newItems) {
+      this.items = newItems
+    }
+  }
 }
 </script>
 

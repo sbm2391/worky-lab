@@ -23,18 +23,18 @@ exports.postItem = (req, res, next)=>{
 
 exports.getItem = (req,res,next)=>{
     Item.findById(req.params.id)
-.then(item=>res.status(200).json(item))
-.catch(e=>res.status(500).send(e));
+    .then(item=>res.status(200).json(item))
+    .catch(e=>res.status(500).send(e));
 }
 
 exports.patchItem = (req,res,next)=>{
     Item.findByIdAndUpdate(req.params.id, req.body, {new:true})
-.then(item=>res.status(200).json(item))
-.catch(e=>res.status(500).send(e));
+    .then(item=>res.status(200).json(item))
+    .catch(e=>res.status(500).send(e));
 }
 
 exports.deleteItem = (req,res,next)=>{
     Item.findByIdAndRemove(req.params.id)
-.then(item=>res.status(200).json(item))
-.catch(e=>res.status(500).send(e));
+    .then(item=>res.status(200).json(item))
+    .catch(e=>res.status(500).send(e));
 }
