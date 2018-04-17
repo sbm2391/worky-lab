@@ -3,7 +3,7 @@
       <v-app id="inspire">
        <navbar></navbar>
           <v-layout row>
-            <new-item></new-item>
+            <new-item v-on:update="updateItems($event)"></new-item>
             <v-flex xs12 sm12 id="margin">
               <v-card>
                   <v-toolbar flat dense class="grey">
@@ -44,7 +44,12 @@ export default {
   components: {
     'new-item': NewItem,
     'modify-item': ModifyItem
-  }
+  },
+   methods: {
+     updateItems(newItems){
+       this.items = newItems
+     }
+   }
 }
 </script>
 

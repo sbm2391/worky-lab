@@ -38,6 +38,7 @@ import itemService from '@/services/Item'
 export default {
   data () {
     return {
+      items:null,
       valid: false,
       titleRules: [
         v => !!v || 'title is required',
@@ -67,6 +68,8 @@ export default {
         try {
           await itemService.postItems(this.item)
           this.clearInputs()
+          this.items = (await itemService.getItems()).data
+          this.$emit('update', this.items)
         } catch (err) {
           console.log(err)
         }
