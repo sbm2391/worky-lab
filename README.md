@@ -22,13 +22,12 @@ $ cd server
 $ cd bin
 $ node seeds.js
 ```
-- inicialice backend
+- inicialice the project
 ```
 $ cd worky-lab
 $ cd server
 $ npm start
 ```
-- inicialice frontend
 ```
 $ cd worky-lab
 $ cd client
