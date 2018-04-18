@@ -8,6 +8,12 @@ Technologies used: MongoDB, Express, Vuejs, Node.js, Vuetify.
 - Install the dependencies in the local node_modules from your terminal
 ```
 $ cd worky-lab
+$ cd server
+$ npm install
+```
+```
+$ cd worky-lab
+$ cd client
 $ npm install
 ```
 - Run the seed file
