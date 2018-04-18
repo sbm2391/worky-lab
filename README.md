@@ -1,4 +1,4 @@
-# worky-lab
+# Worky-lab
 
 Technologies used: MongoDB, Express, Vuejs, Node.js, Vuetify.
 
@@ -12,6 +12,19 @@ $ npm install
 ```
 - Run the seed file
 ```
+$ cd server
 $ cd bin
 $ node seeds.js
+```
+- inicialice backend
+```
+$ cd worky-lab
+$ cd server
+$ npm start
+```
+- inicialice frontend
+```
+$ cd worky-lab
+$ cd client
+$ npm start
 ```
